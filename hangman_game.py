@@ -63,3 +63,24 @@ while not game_over: # Running the game till game_over = True
 
     print(f"Guessed letters: {' '.join(guessed_letters)}")
     print(' '.join(display))  # Join the displayed word (dashes) and display as a single string
+
+    if guessed_letter not in random_word: #Reducing the user's lives due to not getting the correct guess
+        if guessed_letter in "aeiou":
+            lives -= 2
+            print(f"You lose two lives. Remaining guesses: {lives}")  # Corrected line to display remaining guesses
+        else:
+            lives -= 1
+            print(f"Remaining guesses: {lives}")  # Corrected line to display remaining guesses
+
+        if lives == 0:
+            game_over = True
+            print("You lose")
+
+    if "_" not in display: # Tracking to see whether the user has guessed all letters right
+        game_over = True
+        unique_letters = set(random_word)  # Get unique letters in the secret word
+        score = lives * len(unique_letters)
+        print(f"Congratulations! You won with a score of {score}.")
+
+if game_over and "_" in display:
+    print(f"Sorry, you've run out of guesses. The word was '{random_word}'. You lose.")
