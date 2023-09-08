@@ -47,3 +47,19 @@ while not game_over: # Running the game till game_over = True
                 print("You lose")
 
         continue
+
+    guessed_letters.append(guessed_letter)
+
+    for position in range(len(random_word)): # Looping all over the random word choosen
+        letter = random_word[position]
+
+        if letter == guessed_letter: #Replacing the letetr to the _ if the user got it right
+            display[position] = guessed_letter
+
+    remaining_letters = []
+    for letter in random_word: #tracking the remaining letters to be guessed
+        if letter not in guessed_letters:
+            remaining_letters.append(letter)
+
+    print(f"Guessed letters: {' '.join(guessed_letters)}")
+    print(' '.join(display))  # Join the displayed word (dashes) and display as a single string
