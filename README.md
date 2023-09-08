@@ -1,7 +1,7 @@
 This is a Python module assignment to be done in groups of three maximum
  
-Group members:  KATUMBA Frank
-                MUNEZERO Michel
+Group members:  KATUMBA Frank | 
+                MUNEZERO Michel | 
                 BYIRINGIRO Olivier
 
 
