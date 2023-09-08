@@ -36,7 +36,7 @@ while not game_over: # Running the game till game_over = True
     if guessed_letter in guessed_letters: # Checking if the user tries to enter the guessed word twice
         if warnings > 0:
             warnings -= 1
-            print(f"You've already guessed the letter '{guessed_letter}'. Try again. You have {warnings} warning(s) left.")
+            print(f"You've already guessed the letter '{guessed_letter}'. You have {warnings} warning(s) left.")
         else:
             lives -= 1
             print(f"You've already guessed the letter '{guessed_letter}'. You have no warnings left. You lose a guess.")
