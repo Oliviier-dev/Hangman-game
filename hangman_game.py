@@ -20,3 +20,15 @@ print(' '.join(display))  # Join the dashes and display as a single string
 
 guessed_letters = []
 warnings = 3
+
+while not game_over: # Running the game till game_over = True
+    guessed_letter = input("Guess a letter: ").lower()  # Convert guessed_letter to lowercase
+
+    if not guessed_letter.isalpha(): # Checking if the entered guess isn't an alphabet
+        if warnings > 0:
+            warnings -= 1
+            print(f"Invalid input. Please enter a letter. You have {warnings} warning(s) left.")
+        else:
+            lives -= 1  # Deduct a life when warnings are exhausted
+            print("You have no warnings left. You lose a guess.")
+        continue
